@@ -1,0 +1,58 @@
+  <!-- <div >
+      <mat-card class="mb-4">
+    
+
+     <mat-card-content>
+       <input  title="p" type="text" [value]="pass.fullName" class="form-control fullNameControl" [disabled]="!isInEditMode" #fn> 
+
+
+       <h5>{{pass.checkInDate|date}}</h5>
+     </mat-card-content>
+
+     <mat-card-actions>
+       <button mat-raised-button color="primary" *ngIf="!isInEditMode" (click)="isInEditMode=true">Edit</button>
+       <button mat-raised-button color="primary" *ngIf="isInEditMode" (click)="!isInEditMode=false; onUpdate(fn, pass)">Done</button>
+       <button mat-raised-button color="warn" (click)="onRemove(pass)">Remove</button>
+     </mat-card-actions>
+  </mat-card>
+  </div>
+   -->
+
+   <mat-card class="mb-4">
+  <mat-card-content>
+<div class="fullNameWrapper" [ngClass]="{ check_In: pass.checkedIn }">
+  <input
+    type="text"
+    [value]="pass.fullName"
+    class="form-control"
+    [disabled]="!isInEditMode"
+    #fn
+  />
+</div>
+
+    <p>Check in Date:{{ pass.checkInDate ?( pass.checkInDate | date):'Not checked in yet!!!' }}</p>
+    <p>
+  Children: {{ pass.children ? pass.children.length : 0 }}
+</p>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary"
+      *ngIf="!isInEditMode"
+      (click)="isInEditMode = true">
+      Edit
+    </button>
+
+    <button mat-raised-button color="primary"
+      *ngIf="isInEditMode"
+      (click)="isInEditMode = false; onUpdate(fn, pass)">
+      Done
+    </button>
+
+    <button mat-raised-button color="warn"
+      (click)="onRemove(pass)">
+      Remove
+    </button>
+  </mat-card-actions>
+</mat-card>

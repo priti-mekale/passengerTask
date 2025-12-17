@@ -1,0 +1,63 @@
+// .form-control:disabled {
+//     background-color: transparent;
+//     opacity: 1;
+//     border: 0px;
+// }
+
+// .fullNameControl::after{
+//     content: "";
+//     position: absolute;
+//     width: 15px;
+//     height: 15px;
+//     left: 10px;
+//     top: 27px;
+//     background-color: red;
+//     border-radius: 50%;
+// }
+
+
+.form-control:disabled {
+  background-color: transparent;
+  opacity: 1;
+  border: 0;
+}
+
+.fullNameWrapper {
+  position: relative;
+}
+
+.fullNameWrapper::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+.fullNameWrapper {
+  position: relative;
+}
+
+/* default dot color */
+.fullNameWrapper::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: red; 
+  border-radius: 50%;
+}
+
+
+.fullNameWrapper.check_In::after {
+  background-color: green;
+}
+
