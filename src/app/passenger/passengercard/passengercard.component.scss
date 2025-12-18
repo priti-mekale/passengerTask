@@ -61,3 +61,7 @@
   background-color: green;
 }
 
+/* hide dot when input is NOT disabled */
+.fullNameWrapper:has(input:not(:disabled))::after {
+  display: none;
+}

@@ -20,7 +20,9 @@
 
    <mat-card class="mb-4">
   <mat-card-content>
-<div class="fullNameWrapper" [ngClass]="{ check_In: pass.checkedIn }">
+<div class="fullNameWrapper" [ngClass]="{ check_In: pass.checkedIn,hideDot: isInEditMode
+
+ }">
   <input
     type="text"
     [value]="pass.fullName"
